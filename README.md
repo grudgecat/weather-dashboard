@@ -12,7 +12,7 @@ The project is a browser based weather dashboard that utilizes data pulled from 
 ![screen cap of Event Calendar](./assets/screencap.png )
 
 ## Project Links
-GitHub Source Code:   \
+GitHub Source Code: https://github.com/grudgecat/weather-dashboard \
 Site URL/Pages link: 
 
 ***
