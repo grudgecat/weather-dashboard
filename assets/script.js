@@ -1,6 +1,7 @@
 var forecastTodayEl = document.getElementById('selectedCity');
 var btnSearchEl = document.getElementById('btnSearch');
-
+var prevCityListEl = document.getElementById('prevCityList');
+ 
 var cityName = "London";
 var apiKey = "81d886f9c96b4f8fd57e877f07512c85";
 var iconcode = "fff";
@@ -15,7 +16,6 @@ var lon_lat = {
 
 function getCoords(cityName) {
     var requestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
-
     fetch(requestUrl)
         .then(function (response) {
             return response.json();
@@ -30,16 +30,13 @@ function getCoords(cityName) {
 getCoords(cityName);
 
 function getWeatherTodayData(cityName) {
+    //dependant on getCoords running first to set longitude/latitude
     var requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lon_lat.latitude}&lon=${lon_lat.longitude}&exclude=minutely,hourly,daily&appid=${apiKey}`;
-
-    console.log(requestUrl); 
-      
     fetch(requestUrl)
         .then(function (response) {
         return response.json();
         })
         .then(function (data) {
-            console.log(data);
             iconurl = `"http://openweathermap.org/img/w/${data.current.weather[0].icon}.png"`
             var tempF = (((data.current.temp - 273.15) * 1.8) +32).toFixed(1);
     
@@ -55,7 +52,7 @@ function getWeatherTodayData(cityName) {
      
 setTimeout(getWeatherTodayData, 1000);
 
-// getTodayWeather(cityName);  //this works, but building URL via EVENT LISTENER the cityName in URL fails???
+// getWeatherTodayData(cityName);  //this works, but building URL via EVENT LISTENER the cityName in URL fails???
 //btnSearchEl.addEventListener('click', getTodayWeather); //Generates error in URL, cityName displays as mouse event???
 //when defined with 'onclick' at button, fxn runs but city is undefined in URL???
 //btnSearchEl.click(getTodayWeather);  //also fails with undefined.
@@ -82,5 +79,15 @@ function getFiveDayForecastData(cityName) {
 }
 
 setTimeout(getFiveDayForecastData, 1000);
+
+function populateCitiesList() {
+    //pull previously searched cities from localStorage
+    var cityList = JSON.parse(localStorage.getItem("cities")) || [];
+    for(i = 0; i < cityList.length; i++) {
+        var tempListItem = document.createElement('LI');
+        tempListItem.textContent = cities[i].city;
+        prevCityListEl.appendChild(tempListItem);
+    } 
+}
 
 
