@@ -42,7 +42,6 @@ function getWeatherTodayData(cityName) {
             console.log(data);
             iconurl = `"http://openweathermap.org/img/w/${data.current.weather[0].icon}.png"`
             var tempF = (((data.current.temp - 273.15) * 1.8) +32).toFixed(1);
-            console.log(tempF);
     
             $('#selectedCity').append(`
             <h3>${lon_lat.name}  (${today}) </h3><img style="width:30px;height:30px" src=${iconurl} alt="Weather Icon">
@@ -60,4 +59,28 @@ setTimeout(getWeatherTodayData, 1000);
 //btnSearchEl.addEventListener('click', getTodayWeather); //Generates error in URL, cityName displays as mouse event???
 //when defined with 'onclick' at button, fxn runs but city is undefined in URL???
 //btnSearchEl.click(getTodayWeather);  //also fails with undefined.
-    
+
+
+function getFiveDayForecastData(cityName) {
+    var requestUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lon_lat.latitude}&lon=${lon_lat.longitude}&units=imperial&appid=${apiKey}`
+
+    fetch(requestUrl)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log("5 day data: ")
+            console.log(data);
+            var i = 0;
+            for(i = 0; i < data.list.length; i+=8) {
+                console.log(data.list[i].main.temp);
+                console.log(data.list[i].wind.speed);
+                console.log(data.list[i].main.humidity);
+            } 
+
+        });
+}
+
+setTimeout(getFiveDayForecastData, 1000);
+
+
