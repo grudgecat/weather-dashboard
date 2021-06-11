@@ -1,82 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- Bootstrap v4.3 stylesheet -->
-    <link rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <!-- Local CSS stylesheet -->
-    <link rel="stylesheet" href="./assets/styles.css" />  
-    <!-- jquery.js  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <title>Weather Dashboard</title>
-</head>
-<body>
-    <header>
-      <h1>Weather Dashboard</h1>
-    </header>
-    <main>
-      <div class="container">
 
-        <div class="row">
-          <div class="col-3 searchBox">
-            <h4>Search for a City:</h4>
-            <textarea id="txtSearch"></textarea>
-            <button onclick="getTodayWeather()" id="btnSearch" class="btnSearch">SEARCH</button>
-          </div>
-          <div id="selectedCity" class="col-9">
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- Bootstrap v4.3 stylesheet -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <!-- Local CSS stylesheet -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <!-- jquery.js  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <title>Weather Dashboard</title>
+</head>
+
+<body>
+  <header>
+    <h1>Weather Dashboard</h1>
+  </header>
+  <main>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-3 searchBox">
+          <h4>Search for a City:</h4>
+          <textarea id="txtSearch"></textarea>
+          <button id="btnSearch" class="btnSearch">SEARCH</button>
+        </div>
+        <div id="selectedCity" class="col-9">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <ul id="prevCityList">
+          </ul>
+        </div>
+        <div id="dailyForecasts" class="col-9">
+
         </div>
 
-        <div class="row">
-          <div class="col-3">
-            <ul id="prevCityList">
-              <li>previous cities go here</li>
-            </ul>
-          </div>                 
-            <div id="dailyForecasts" class="col-9">
-            <div class="card w-20">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              </div>
-            </div>
-            <div class="card w-20">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              </div>
-            </div>
-            <div class="card w-20">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              </div>
-            </div>
-            <div class="card w-20">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              </div>
-            </div>
-            <div class="card w-20">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              </div>
-            </div>
-          </div>
-
-        
 
       </div>
-    </main>
-    <footer></footer>
+  </main>
+  <footer></footer>
 
-    
-<script src="./assets/script.js"></script>
+
+  <script src="./assets/script.js"></script>
 </body>
+
 </html>
