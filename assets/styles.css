@@ -8,6 +8,7 @@ header {
     display: flex;
     align-self: flex-end;
     justify-content: center;
+    margin-bottom: 20px;
     font-size: 2rem;
     background: linear-gradient(to right, cornflowerblue 0%, #4111dd 100%);
 }
@@ -66,8 +67,14 @@ textarea {
 
 #selectedCity {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border: 3px solid black;
+    color: black;
+    font-size: 1.3rem;
+}
+
+#selectedCity img {
+    width:"80";
 }
 
 #dailyForecasts {

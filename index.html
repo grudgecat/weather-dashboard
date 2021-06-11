@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./assets/styles.css" />  
     <!-- jquery.js  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <title>Weather Dashboard</title>
 </head>
 <body>
@@ -24,7 +25,7 @@
           <div class="col-3 searchBox">
             <h4>Search for a City:</h4>
             <textarea id="txtSearch"></textarea>
-            <button id=btnSearch class="btnSearch">SEARCH</button>
+            <button onclick="getTodayWeather()" id="btnSearch" class="btnSearch">SEARCH</button>
           </div>
           <div id="selectedCity" class="col-9">
           </div>
@@ -33,10 +34,7 @@
         <div class="row">
           <div class="col-3">
             <ul id="prevCityList">
-              <li>test testy test</li>
-              <li>test testy test</li>
-              <li>test testy test</li>
-              <li>test testy test</li>
+              <li>previous cities go here</li>
             </ul>
           </div>                 
             <div id="dailyForecasts" class="col-9">
@@ -79,6 +77,6 @@
     <footer></footer>
 
     
-<script src="./Develop/script.js"></script>
+<script src="./assets/script.js"></script>
 </body>
 </html>
