@@ -15,7 +15,7 @@
   <title>Weather Dashboard</title>
 </head>
 
-<body>
+<body onload="init()">
   <header>
     <h1>Weather Dashboard</h1>
   </header>
@@ -25,7 +25,7 @@
       <div class="row">
         <div class="col-3 searchBox">
           <h4>Search for a City:</h4>
-          <textarea id="txtSearch"></textarea>
+          <textarea type="text" id="txtSearch"></textarea>
           <button id="btnSearch" class="btnSearch">SEARCH</button>
         </div>
         <div id="selectedCity" class="col-9">
@@ -34,19 +34,15 @@
 
       <div class="row">
         <div class="col-3">
+          <p>Previous searches:</p>
           <ul id="prevCityList">
           </ul>
         </div>
         <div id="dailyForecasts" class="col-9">
-
         </div>
-
-
       </div>
   </main>
   <footer></footer>
-
-
   <script src="./assets/script.js"></script>
 </body>
 
