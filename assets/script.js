@@ -8,7 +8,7 @@ var apiKey = "81d886f9c96b4f8fd57e877f07512c85";
 var iconcode = "fff";
 var iconurl = "";
 var today = moment().format("M/D/YYYY");
-
+var uviNumber = 0;
 var lon_lat = {
     name: "",
     longitude: 0,
@@ -20,10 +20,18 @@ var lon_lat = {
 function getCityName() {
     var cityName = $("#txtSearch").val();
     cityList.push(cityName);
-    if(cityList.length > 5)
-        cityList.slice(1,5);
-    localStorage.setItem("cities", JSON.stringify(cityList));
+    checkList();
     getCoords(cityName);
+}
+
+function checkList() {
+    console.log(cityList.length);
+    if(cityList.length > 5) {
+        // cityList.slice(1,5);
+        $(cityList).slice(1,5);
+    }
+    console.log(cityList);
+    localStorage.setItem("cities", JSON.stringify(cityList));
 }
 
 btnSearchEl.on('click', getCityName); 
@@ -56,6 +64,7 @@ function getWeatherTodayData() {
         .then(function (data) {
             iconurl = `"http://openweathermap.org/img/w/${data.current.weather[0].icon}.png"`
             var tempF = (((data.current.temp - 273.15) * 1.8) +32).toFixed(1);
+            uviNumber = data.current.uvi;
     
             $('#selectedCity').html(`
             <h3>${lon_lat.name}  (${today}) </h3><img style="width:50px;height:50px" src=${iconurl} alt="Weather Icon">
@@ -75,8 +84,8 @@ function getFiveDayForecastData(cityName) {
             return response.json();
         })
         .then(function (data) {
-            console.log("5 day data: ")
-            console.log(data);
+            // console.log("5 day data: ") 
+            // console.log(data); 
             var i = 0;
             $("#dailyForecasts").empty();
             for(i = 2; i < data.list.length; i+=8) {
@@ -97,10 +106,12 @@ function getFiveDayForecastData(cityName) {
 }
 
 function populateCitiesList() {
+    $("#prevCityList").empty();
     //pull previously searched cities from localStorage
     for(i = 0; i < cityList.length; i++) {
+        cityList = JSON.parse(localStorage.getItem("cities"));
         $( "#prevCityList" ).append( `<li>${cityList[i]}</li>` );
     } 
 }
 
-populateCitiesList();
+// populateCitiesList(); 
