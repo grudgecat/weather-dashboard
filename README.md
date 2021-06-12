@@ -12,8 +12,8 @@ The project is a browser based weather dashboard that utilizes data pulled from 
 ![screen cap of Event Calendar](./assets/screencap.png )
 
 ## Project Links
-GitHub Source Code: https://github.com/grudgecat/weather-dashboard \
-Site URL/Pages link: 
+GitHub Source Code: https://github.com/grudgecat/weather-dashboard  
+Site URL/Pages link: https://grudgecat.github.io/weather-dashboard/
 
 ***
 ## Dependencies 
@@ -33,16 +33,18 @@ To include in project file:
   href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 />
 ```
-
+**Moment.js:** \
+Project webpage: https://momentjs.com/  
+To include in project file:
 ```
-**Other:**  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 ```
+**APIs:**
 Data obtained from OpenWeather One Call API: [OpenWeather One Call API](https://openweathermap.org/api/one-call-api) 
 ```
 
 ***
 ## Expected Behavior 
-_Pseudocode/Expected bevhavior:_   
 GIVEN a weather dashboard with form inputs
 WHEN I search for a city
 THEN I am presented with current and future conditions for that city and that city is added to the search history

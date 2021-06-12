@@ -139,6 +139,13 @@ textarea {
     height: 20px;
     width: 100%;
 } 
+
+#uvi {
+    padding-top:5px;
+    padding-bottom:5px;
+    max-width: 25%;
+}
+
 .footer {
     height: 30px;
 }
