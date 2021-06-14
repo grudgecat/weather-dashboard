@@ -3,7 +3,7 @@ var prevCityListEl = $('#prevCityList');
  
 // var cityName = "London";
 var cityList = JSON.parse(localStorage.getItem("cities")) || [];
-// var apiKey = "81d886f9c96b4f8fd57e877f07512c85";
+var apiKey = "81d886f9c96b4f8fd57e877f07512c85";
 var numOfCities = 5;
 var iconcode = "fff";
 var iconurl = "";
