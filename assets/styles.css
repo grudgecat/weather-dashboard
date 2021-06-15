@@ -23,9 +23,6 @@ ul {
     margin-top: 5px;
   }
 
-.container {
-}
-  
 textarea {
     background: transparent;
     border: 1px solid black;
@@ -78,11 +75,15 @@ textarea {
     width:"80";
 }
 
+#prevCityList li:hover {
+    background-color: lightcyan;
+    font-weight: bolder;
+}
+
 #dailyForecasts {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-
 }
 
 #dailyForecasts p {
